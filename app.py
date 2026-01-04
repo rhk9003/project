@@ -192,7 +192,7 @@ elif page == "👠 鞋業品牌 & 小白鞋專案":
     st.title("鞋業品牌：品牌年輕化與轉型")
     st.caption("含重點專案：小白鞋上市計畫")
 
-    # Part 1: 整體營運 (Terminology corrected)
+    # Part 1: 整體營運
     st.markdown('<div class="slide-card">', unsafe_allow_html=True)
     st.header("1. 品牌整體營運 (General Operations)")
     
@@ -280,7 +280,7 @@ elif page == "👗 女裝品牌 (OMO)":
     st.header("2. 關鍵作為")
     st.subheader("基礎建設 & 內容企劃")
     
-    st.markdown("**🛠️ 營運重整**") # 運營 -> 營運
+    st.markdown("**🛠️ 營運重整**")
     st.markdown("- 導入 OMO 系統與進銷存報表，解決庫存不同步。")
     st.markdown("- 重建會員制度，強制/引導綁定 LineOA。")
     
@@ -303,7 +303,7 @@ elif page == "👗 女裝品牌 (OMO)":
 # 頁面 5: 3C
 # ==========================================
 elif page == "📱 3C/Apple 全通路 & SEO":
-    st.title("3C & Apple：複雜通路營運") # 運營 -> 營運
+    st.title("3C & Apple：複雜通路營運")
     
     st.markdown('<div class="slide-card">', unsafe_allow_html=True)
     st.header("1. 資源與環境限制")
@@ -323,7 +323,7 @@ elif page == "📱 3C/Apple 全通路 & SEO":
         st.markdown("[範例連結：Second-hand Mac Prices](#)")
     with col3c_2:
         st.markdown("### 🔄 全通路整合")
-        st.write("優化多平台營運流程，克服非標品上架難題。") # 運營 -> 營運
+        st.write("優化多平台營運流程，克服非標品上架難題。")
     st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown('<div class="slide-card">', unsafe_allow_html=True)
@@ -372,6 +372,14 @@ elif page == "💊 保健食品 (受規管產業)":
         render_kpi_card("關鍵字", "Top 5", "嘴破/肌醇", "自然流量主要入口")
         
     st.caption("文章至今仍是全站自然流量前三高的 Landing Page")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # 新增：連結區塊 (Updated with real URLs provided)
+    st.markdown('<div class="slide-card">', unsafe_allow_html=True)
+    st.markdown("##### 🔗 實績連結 (衛教文章範例)")
+    st.markdown("- [嘴破很煩？6 個你該知道的舒緩與預防方法](https://www.lovitafood.com.tw/blog/posts/mouth-ulcer-relief-and-prevention-6-tips)")
+    st.markdown("- [肌醇是什麼？10個關於肌醇大家都在問的問題](https://www.lovitafood.com.tw/blog/posts/inositol-10-faqs)")
+    st.markdown("- [嘴破常補B 群還是不好？破解營養補充迷思](https://www.lovitafood.com.tw/blog/posts/mouth-ulcers-b-complex-supplement-myths)")
     st.markdown('</div>', unsafe_allow_html=True)
 
 # 頁尾

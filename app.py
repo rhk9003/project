@@ -10,47 +10,48 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# 自定義 CSS：統一使用您提供的簡報卡片風格
+# 自定義 CSS：優化卡片間距，去除過多留白
 st.markdown("""
 <style>
     /* 核心背景色 */
-    .stApp { background-color: #f1f5f9; }
+    .stApp { background-color: #f8fafc; }
     
-    /* 簡報卡片容器 */
+    /* 簡報卡片容器 - 縮小內距，讓內容更緊湊 */
     .slide-card {
         background-color: white;
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        margin-bottom: 30px;
+        padding: 25px; /* 從 40px 改為 25px */
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        margin-bottom: 20px; /* 縮小卡片間距 */
         border: 1px solid #e2e8f0;
+        /* 移除 min-height 或 height 強制設定，讓內容撐開 */
     }
     
     /* 統一標題樣式 */
-    h2 { color: #1e3a8a; font-weight: 700; border-left: 6px solid #3b82f6; padding-left: 15px; margin-top: 0px; margin-bottom: 20px; }
-    h3 { color: #334155; margin-top: 10px; font-size: 1.3rem; font-weight: 600; }
-    h4 { color: #475569; margin-top: 5px; font-weight: 600; }
+    h2 { color: #1e3a8a; font-weight: 700; border-left: 5px solid #3b82f6; padding-left: 12px; margin-top: 0px; margin-bottom: 15px; font-size: 1.5rem; }
+    h3 { color: #334155; margin-top: 5px; font-size: 1.2rem; font-weight: 600; }
+    h4 { color: #475569; margin-top: 5px; font-weight: 600; font-size: 1rem; }
     
     /* 關鍵指標樣式 */
     div[data-testid="metric-container"] {
-        background-color: #f8fafc;
+        background-color: #f1f5f9;
         border: 1px solid #e2e8f0;
-        padding: 15px;
-        border-radius: 10px;
+        padding: 10px 15px;
+        border-radius: 8px;
         text-align: center;
         transition: transform 0.2s;
     }
     div[data-testid="metric-container"]:hover {
-        transform: scale(1.02);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
     
     /* 標籤裝飾 */
     .tag {
         display: inline-block;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.85em;
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
         font-weight: 600;
         margin-right: 5px;
         margin-bottom: 5px;
@@ -98,6 +99,7 @@ with st.sidebar:
 if page == "🏠 戰略總覽 (Summary)":
     st.title("戰略總覽 Executive Summary")
     
+    # 個人定位區塊
     st.markdown('<div class="slide-card">', unsafe_allow_html=True)
     st.header("個人定位")
     st.markdown("""
@@ -107,27 +109,34 @@ if page == "🏠 戰略總覽 (Summary)":
     """)
     st.markdown('</div>', unsafe_allow_html=True)
 
+    # 核心能力區塊 - 移除強制高度，改讓內容撐開
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.markdown('<div class="slide-card" style="height:250px">', unsafe_allow_html=True)
+        st.markdown('<div class="slide-card">', unsafe_allow_html=True)
         st.subheader("📊 數據驅動")
-        st.markdown("- ROAS 優化操盤")
-        st.markdown("- CPA 成本控制")
-        st.markdown("- 庫存迴轉率分析")
+        st.markdown("""
+        - ROAS 優化操盤
+        - CPA 成本控制
+        - 庫存迴轉率分析
+        """)
         st.markdown('</div>', unsafe_allow_html=True)
     with col2:
-        st.markdown('<div class="slide-card" style="height:250px">', unsafe_allow_html=True)
+        st.markdown('<div class="slide-card">', unsafe_allow_html=True)
         st.subheader("🎯 策略佈局")
-        st.markdown("- SEO 關鍵字霸榜")
-        st.markdown("- OMO 虛實整合")
-        st.markdown("- 內容生態系建構")
+        st.markdown("""
+        - SEO 關鍵字霸榜
+        - OMO 虛實整合
+        - 內容生態系建構
+        """)
         st.markdown('</div>', unsafe_allow_html=True)
     with col3:
-        st.markdown('<div class="slide-card" style="height:250px">', unsafe_allow_html=True)
+        st.markdown('<div class="slide-card">', unsafe_allow_html=True)
         st.subheader("⚡ 逆境突圍")
-        st.markdown("- 法規受限突破 (保健)")
-        st.markdown("- 資源匱乏運營 (3C)")
-        st.markdown("- 組織衝突協調 (傳產)")
+        st.markdown("""
+        - 法規受限突破 (保健)
+        - 資源匱乏營運 (3C)
+        - 組織衝突協調 (傳產)
+        """)
         st.markdown('</div>', unsafe_allow_html=True)
 
 # ==========================================
@@ -183,9 +192,9 @@ elif page == "👠 鞋業品牌 & 小白鞋專案":
     st.title("鞋業品牌：品牌年輕化與轉型")
     st.caption("含重點專案：小白鞋上市計畫")
 
-    # Part 1: 整體運營
+    # Part 1: 整體營運 (Terminology corrected)
     st.markdown('<div class="slide-card">', unsafe_allow_html=True)
-    st.header("1. 品牌整體運營 (General Operations)")
+    st.header("1. 品牌整體營運 (General Operations)")
     
     st.markdown("#### ⚠️ 結構性挑戰")
     st.markdown("""
@@ -197,7 +206,7 @@ elif page == "👠 鞋業品牌 & 小白鞋專案":
     
     st.divider()
     
-    st.markdown("#### ⚔️ 運營作為")
+    st.markdown("#### ⚔️ 營運作為")
     st.markdown("""
     1. **場景化導購**：重構官網分類（上班鞋、護士鞋、電商限定），解決選鞋焦慮。
     2. **全通路波段**：在均一價限制下，設計精密的「全通路折扣波段」，平衡各通路利益。
@@ -213,11 +222,11 @@ elif page == "👠 鞋業品牌 & 小白鞋專案":
         render_kpi_card("常態月營收", "100萬", "穩定貢獻", "達成百萬級營收")
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # Part 2: 小白鞋專案 (獨立區塊，視覺加強)
+    # Part 2: 小白鞋專案
     st.markdown("---")
     st.subheader("🚀 重點專案：小白鞋上市計畫")
     
-    st.markdown('<div class="slide-card" style="border-left: 10px solid #2563eb;">', unsafe_allow_html=True)
+    st.markdown('<div class="slide-card" style="border-left: 8px solid #2563eb;">', unsafe_allow_html=True)
     st.header("2. 小白鞋專案：從 0 到市場冠軍")
     st.subheader("策略核心：以「市場上最好穿好走的小白鞋」切入")
     
@@ -271,7 +280,7 @@ elif page == "👗 女裝品牌 (OMO)":
     st.header("2. 關鍵作為")
     st.subheader("基礎建設 & 內容企劃")
     
-    st.markdown("**🛠️ 營運重整**")
+    st.markdown("**🛠️ 營運重整**") # 運營 -> 營運
     st.markdown("- 導入 OMO 系統與進銷存報表，解決庫存不同步。")
     st.markdown("- 重建會員制度，強制/引導綁定 LineOA。")
     
@@ -294,7 +303,7 @@ elif page == "👗 女裝品牌 (OMO)":
 # 頁面 5: 3C
 # ==========================================
 elif page == "📱 3C/Apple 全通路 & SEO":
-    st.title("3C & Apple：複雜通路運營")
+    st.title("3C & Apple：複雜通路營運") # 運營 -> 營運
     
     st.markdown('<div class="slide-card">', unsafe_allow_html=True)
     st.header("1. 資源與環境限制")
@@ -314,7 +323,7 @@ elif page == "📱 3C/Apple 全通路 & SEO":
         st.markdown("[範例連結：Second-hand Mac Prices](#)")
     with col3c_2:
         st.markdown("### 🔄 全通路整合")
-        st.write("優化多平台營運流程，克服非標品上架難題。")
+        st.write("優化多平台營運流程，克服非標品上架難題。") # 運營 -> 營運
     st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown('<div class="slide-card">', unsafe_allow_html=True)

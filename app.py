@@ -608,7 +608,7 @@ elif page == "📱 3C/Apple 全通路 & SEO":
     with col1:
         info_block("""
         <strong>🔍 SEO 佈局</strong><br><br>
-        針對二手 Mac 建立完整的「價格」、「年份」、「型號規格」資料庫，攔截高意圖流量。
+        針對「二手 Mac 價格」、「二手 Mac 年份」、「二手 Mac 規格」等高購買意圖關鍵字，佔據搜尋結果第一名。
         """, "info")
     with col2:
         info_block("""
